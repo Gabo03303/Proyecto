@@ -1,10 +1,12 @@
 function MainPage8(){
-    
+
     return <div>
         <br/>
         <div class= "d-flex justify-content-center">
-
-            <h1>PREPARESE SU PEDIDO YA ESTA EN CAMINO</h1>
+            <h1>ESTADO DE SU PEDIDO</h1>
+        </div>
+        <div class= "d-flex justify-content-center">
+            <h2>EN PROCESO</h2>
         </div>
         <div className="d-flex justify-content-center">
         <img  src="/img/delivery.gif" alt="" />

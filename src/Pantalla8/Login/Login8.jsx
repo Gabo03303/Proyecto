@@ -5,16 +5,45 @@ function LoginPage8() {
 
     const navigate = useNavigate()
 
-    const onLoginOk = function(
+
+    const loginHttp = async function(usuario, password){
+        const response = await fetch ("http://localhost:8000/endpoints/login8",
+            {
+                method: "POST",
+                body: JSON.stringify(
+                    {
+                        usuario:usuario,password:password
+                    }
+                )
+            }
+        )
+        const data = await response.json()
+
+            return data.error
+    } 
+    const onLoginOk = async function(
         usuario, password
     ) {
-        if (usuario === "74229263" 
-            && password === "ABC-123") {
+        const error = await loginHttp(usuario,password)
+        if (error === ""){
+            //login correcto 🙂
+            const dataUsuario ={
+                username : usuario,
+                passoword: password
+            }
+            const dataUsuarioJSON = JSON.stringify(dataUsuario)
+            sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
 
-            navigate("/main")
+            navigate("/main", {
+                state : {
+                    username : usuario
+                }
+            })
+
+        }else{
+            console.error(error)
         }
     }
-    
     return <div className="container">
         <div className="row">
             <div className="col"></div>

@@ -4,27 +4,39 @@ import LoginFormR from "./components/LoginFormR"
 function LoginPageR(){
     const navigate = useNavigate()
 
-    const onLoginOk = function(
-        usuario, password
-    ){
-        if(usuario === "admin"
-            && password === "admin"){
-                const dataUsuario = {
-                    usuario: usuario,
-                    password: password
+    const loginHttp = async function(usuario, password){
+        const response = await fetch("http://localhost:8000/endpoints/loginR", {
+            method : "POST",
+            body : JSON.stringify(
+                {
+                    usuario : usuario,
+                    password : password
                 }
+            )
+        })
+        const data = await response.json()
+        return data.error
+    }
 
-                const dataUsuarioJSON = JSON.stringify(dataUsuario)
-                console.log(dataUsuario)
-                console.log(dataUsuarioJSON)
-                sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
-
-                navigate("/Pantalla10", {
-                    state: {
-                        username: usuario
-                    }
-                })
+    const onLoginOk = async function(usuario, password){
+        const error = await loginHttp(usuario, password)
+        if (error === ""){
+            const dataUsuario = {
+                usuario : usuario,
+                password : password
             }
+
+            const dataUsuarioJSON = JSON.stringify(dataUsuario)
+            sessionStorage.setItem("DATA_USUARIO", dataUsuarioJSON)
+
+            navigate("/pantalla10", {
+                state : {
+                    usuario : usuario
+                }
+            })
+        }else{
+            console.error(error)
+        }
     }
 
     return <div className="container w-75 mt-5 rounded">

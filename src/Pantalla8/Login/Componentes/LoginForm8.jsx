@@ -10,8 +10,10 @@ function LoginForm8(props) {
         props.onLoginOk(usuario, password)
     }
     return <form>
-            <h1>Estado de pedido</h1>
 
+            <br/><br/><br/><br/><br/><br/><br/>
+            <h1>Estado de pedido</h1>
+        
         <div>
             <label className="form-label">DNI:</label>
             <input className="form-control" type="text"
@@ -24,14 +26,12 @@ function LoginForm8(props) {
                 value={ password }
                 onChange={ function(evt) { setPassword(evt.target.value) } } />
         </div>
-        <button className="btn btn-success mt-3 col-6" type="button"
-            onClick={ butOnClick }>
-            Login
-        </button>
-        <button className="btn btn-success mt-2" type="button"
-            onClick={ butOnClick }>
-            Solicitar Codigo de verificacion 
-        </button>
+            <div className="d-flex justify-content-center">
+            <button className="btn btn-success mt-3 col-6" type="button"
+                onClick={ butOnClick }>
+                Login
+            </button>
+        </div>
         
     </form>
 }
