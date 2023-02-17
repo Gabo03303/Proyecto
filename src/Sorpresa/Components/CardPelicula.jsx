@@ -7,6 +7,7 @@ function CardPelicula(props){
         <p>{props.pelicula.resenia}</p>
     </div>
 </div>
+
 }
 
 export default CardPelicula
