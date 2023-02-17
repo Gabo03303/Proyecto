@@ -1,4 +1,4 @@
-function Pantalla7(){
+function Pantallita(){
     return <div>
         <div className="d-flex justify-content-center">
             <h1>Realizar pedido</h1>
@@ -37,4 +37,4 @@ function Pantalla7(){
 
     </div>
 }
-export default Pantalla7
+export default Pantallita

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ListaPeliculas from "./Components/ListaPeliculas"
 import Filtro from "./Components/Filtro"
-
+import './Pantalla10.css'
 
 function MaingPage(){
 
@@ -52,6 +52,9 @@ function MaingPage(){
             onFiltrar = { filtrarPelicula }/>
         <ListaPeliculas 
             peliculas = { listaPeliculas }/>
+        <div className="d-flex justify-content-center">
+            <a href="/Pantalla13" className="btn btn-primary mt-4">Registrar Plato</a>
+        </div>
     </div>
 }
 

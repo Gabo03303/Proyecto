@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Filtro4 from "./Componentes/Filtro4"
 import ListaComidas from "./Componentes/ListaComidas"
+import './Pantalla4.css'
 
 function MainPage4() {
     

@@ -34,13 +34,13 @@ function Pantalla6(){
                         <tr>
                         <th scope="row">2</th>
                         <td>Plato Personal</td>
-                        <td>Ceviche de Pescado</td>
-                        <td>S/ 30.00</td>
-                        <td>S/ 60.00</td>
+                        <td>Jalea Mixta</td>
+                        <td>S/ 25.00</td>
+                        <td>S/ 50.00</td>
                         </tr>
                         <tr>
                         <th scope="row" colspan="4">TOTAL A CANCELAR</th>
-                        <td >S/ 60.00</td>
+                        <td >S/ 50.00</td>
                         </tr>
                     </tbody>
                     </table>
